@@ -1,0 +1,677 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\hhyao\OneDrive - UC San Diego\Career\Sample Project\Matthews Asia Data Project\iap_huang.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}25 Apr 2020, 18:10:18
+{txt}
+{com}. use IAP_MD.dta, clear
+{txt}
+{com}. save IAP_MD_huang.dta, replace
+{txt}file IAP_MD_huang.dta saved
+
+{com}. 
+. *--------------------------Data Overview--------------------------*
+. desc
+
+{txt}Contains data from {res}IAP_MD_huang.dta
+{txt}  obs:{res}           216                          
+{txt} vars:{res}           119                          25 Apr 2020 18:10
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:Country        }{txt}{bind: str30   }{bind:{txt}%30s      }{space 1}{bind:         }{bind:  }{res}{res}Country Name{p_end}
+{p 0 48}{bind:CountryCode    }{txt}{bind: str5    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}Country Code{p_end}
+{p 0 48}{bind:CAB            }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Current account balance (% of GDP) [BNCABXOKAGDZS]{p_end}
+{p 0 48}{bind:Creditfromfin~l}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Domestic credit provided by financial sector (% of GDP) [FSASTDOMSGDZS]{p_end}
+{p 0 48}{bind:Creditfrompri~e}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Domestic credit to private sector (% of GDP) [FSASTPRVTGDZS]{p_end}
+{p 0 48}{bind:Creditfrombanks}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Domestic credit to private sector by banks (% of GDP) [FDASTPRVTGDZS]{p_end}
+{p 0 48}{bind:Exports_GS     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Exports of goods and services (% of GDP) [NEEXPGNFSZS]{p_end}
+{p 0 48}{bind:FinalConsumpt~p}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Final consumption expenditure (% of GDP) [NECONTOTLZS]{p_end}
+{p 0 48}{bind:FDI_inflow     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Foreign direct investment, net inflows (% of GDP) [BXKLTDINVWDGDZS]{p_end}
+{p 0 48}{bind:FDI_outflow    }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Foreign direct investment, net outflows (% of GDP) [BMKLTDINVWDGDZS]{p_end}
+{p 0 48}{bind:GDP_2010const  }{txt}{bind: double  }{bind:{txt}%14.2f    }{space 1}{bind:         }{bind:  }{res}{res}GDP (constant 2010 US$) [NYGDPMKTPKD]{p_end}
+{p 0 48}{bind:GDP_growth     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}GDP growth (annual %) [NYGDPMKTPKDZG]{p_end}
+{p 0 48}{bind:GDPpercap_201~t}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}GDP per capita (constant 2010 US$) [NYGDPPCAPKD]{p_end}
+{p 0 48}{bind:GDS_pctGDP     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Gross domestic savings (% of GDP) [NYGDSTOTLZS]{p_end}
+{p 0 48}{bind:GCF_pctGDP     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Gross capital formation (% of GDP) [NEGDITOTLZS]{p_end}
+{p 0 48}{bind:GNE_pctGDP     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Gross national expenditure (% of GDP) [NEDABTOTLZS]{p_end}
+{p 0 48}{bind:Imports_GS     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Imports of goods and services (% of GDP) [NEIMPGNFSZS]{p_end}
+{p 0 48}{bind:Inflation      }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Inflation, GDP deflator (annual %) [NYGDPDEFLKDZG]{p_end}
+{p 0 48}{bind:ManufacturingVA}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Manufacturing, value added (% of GDP) [NVINDMANFZS]{p_end}
+{p 0 48}{bind:MerchTrade     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Merchandise trade (% of GDP) [TGVALTOTLGDZS]{p_end}
+{p 0 48}{bind:MilitaryExp    }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Military expenditure (% of GDP) [MSMILXPNDGDZS]{p_end}
+{p 0 48}{bind:Tax_pctGDP     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Tax revenue (% of GDP) [GCTAXTOTLGDZS]{p_end}
+{p 0 48}{bind:Trade_pctGDP   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Trade (% of GDP) [NETRDGNFSZS]{p_end}
+{p 0 48}{bind:Trade_GS       }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Trade in services (% of GDP) [BGGSRNFSVGDZS]{p_end}
+{p 0 48}{bind:OtherTaxes_pc~P}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Other taxes (% of revenue) [GCTAXOTHRRVZS]{p_end}
+{p 0 48}{bind:ProfitTax      }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Profit tax (% of commercial profits) [ICTAXPRFTCPZS]{p_end}
+{p 0 48}{bind:Av_TariffRate~m}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Tariff rate, applied, weighted mean, all products (%) [TMTAXMRCHWMARZS]{p_end}
+{p 0 48}{bind:Av_TariffRate~N}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Tariff rate, most favored nation, weighted mean, all products (%) [TMTAXMRCHWMFN{p_end}
+{p 0 48}{bind:Tax_exports    }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Taxes on exports (% of tax revenue) [GCTAXEXPTZS]{p_end}
+{p 0 48}{bind:Tax_GS         }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Taxes on goods and services (% of revenue) [GCTAXGSRVRVZS]{p_end}
+{p 0 48}{bind:Tax_intltrade  }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Taxes on international trade (% of revenue) [GCTAXINTTRVZS]{p_end}
+{p 0 48}{bind:GovExp_educat~n}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Government expenditure on education, total (% of GDP) [SEXPDTOTLGDZS]{p_end}
+{p 0 48}{bind:Labor_advance~u}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Labor force with advanced education (% of total working-age population with adva{p_end}
+{p 0 48}{bind:Labor_basicedu }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Labor force with basic education (% of total working-age population with basic e{p_end}
+{p 0 48}{bind:PrePrimaryedu~s}{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Preprimary education, duration (years) [SEPREDURS]{p_end}
+{p 0 48}{bind:Primaryedu_ye~s}{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Primary education, duration (years) [SEPRMDURS]{p_end}
+{p 0 48}{bind:Secondaryedu_~s}{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Secondary education, duration (years) [SESECDURS]{p_end}
+{p 0 48}{bind:Battle_deaths  }{txt}{bind: int     }{bind:{txt}%14.2f    }{space 1}{bind:         }{bind:  }{res}{res}Battle-related deaths (number of people) [VCBTLDETH]{p_end}
+{p 0 48}{bind:Neonatal_deaths}{txt}{bind: long    }{bind:{txt}%14.2f    }{space 1}{bind:         }{bind:  }{res}{res}Number of neonatal deaths [SHDTHNMRT]{p_end}
+{p 0 48}{bind:Under5_deaths  }{txt}{bind: long    }{bind:{txt}%14.2f    }{space 1}{bind:         }{bind:  }{res}{res}Number of under-five deaths [SHDTHMORT]{p_end}
+{p 0 48}{bind:DCP_Score      }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Dealing with construction permits (DB16-19 methodology) - Score [IC.CNST.PRMT.DF{p_end}
+{p 0 48}{bind:DCP_QualityIn~x}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Dealing with construction permits: Building quality control index (0-15) (DB16-1{p_end}
+{p 0 48}{bind:DCP_Cost       }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Dealing with construction permits: Cost (% of Warehouse value) [IC.CNST.PRMT.COS{p_end}
+{p 0 48}{bind:DCP_Procedures }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Dealing with construction permits: Procedures (number) [IC.CNST.PRMT.PROC.NO]{p_end}
+{p 0 48}{bind:DCP_Certifica~n}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Dealing with construction permits: Professional certifications index (0-4) (DB16{p_end}
+{p 0 48}{bind:DPC_QualCont_~t}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Dealing with construction permits: Quality control after construction index (0-3{p_end}
+{p 0 48}{bind:DPC_QualCont_~g}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Dealing with construction permits: Quality control during construction index (0-{p_end}
+{p 0 48}{bind:DPC_Days       }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Dealing with construction permits: Time (days) [IC.CNST.PRMT.TM.DY]{p_end}
+{p 0 48}{bind:ER_Score       }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts (DB17-19 methodology) - Score [ENF.CONT.COEN.DB1719.DFRN]{p_end}
+{p 0 48}{bind:ER_Attorney    }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Attorney fees (% of claim) [ENF.CONT.COEN.ATFE.PR]{p_end}
+{p 0 48}{bind:ER_Cost        }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Cost (% of claim) [ENF.CONT.COEN.COST.ZS]{p_end}
+{p 0 48}{bind:ER_CourtFees   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Court fees (% of claim) [ENF.CONT.COEN.CTFE.PR]{p_end}
+{p 0 48}{bind:ER_EnforceFees }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Enforcement fees (% of claim) [ENF.CONT.COEN.ENFE.PR]{p_end}
+{p 0 48}{bind:ER_JudgmentDays}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Enforcement of judgment (days) [ENF.CONT.COEN.ENJU.DY]{p_end}
+{p 0 48}{bind:ER_FilingDays  }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Filing and service (days) [ENF.CONT.COEN.FLSR.DY]{p_end}
+{p 0 48}{bind:ER_JudicialQual}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Quality of the judicial processes index (0-19) (DB17-19 met{p_end}
+{p 0 48}{bind:ER_Time        }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Time (days) [ENF.CONT.DURS.DY]{p_end}
+{p 0 48}{bind:ER_TrialTime   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Enforcing contracts: Trial and judgment (days) [ENF.CONT.COEN.TRJU.DY]{p_end}
+{p 0 48}{bind:GC_Score       }{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting credit (DB15-19 methodology) - Score [IC.CRED.ACC.CRD.DB1519.DFRN]{p_end}
+{p 0 48}{bind:GC_Total       }{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting Credit total score (DB15-19 methodology) [IC.CRED.ACC.ACES.DB1519]{p_end}
+{p 0 48}{bind:GC_LegalStg    }{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting credit: Strength of legal rights index (0-12) (DB15-19 methodology) [IC.{p_end}
+{p 0 48}{bind:GE_Score       }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity (DB16-19 methodology) - Score [IC.ELC.ACES.DFRN.DB1619]{p_end}
+{p 0 48}{bind:GE_TariffChange}{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity: Communication of tariffs and tariff changes (0-1) (DB16-19 {p_end}
+{p 0 48}{bind:GE_Cost        }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity: Cost to get electricity (% of income per capita) [IC.ELC.AC{p_end}
+{p 0 48}{bind:GE_ResotreServ }{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity: Mechanisms for restoring service (0-1) (DB16-19 methodology{p_end}
+{p 0 48}{bind:GE_Monitoring  }{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity: Mechanisms for monitoring outages (0-1) (DB16-19 methodolog{p_end}
+{p 0 48}{bind:GE_MinOutage   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity: Minimum outage time (in minutes)  (DB16-19 methodology) [IC{p_end}
+{p 0 48}{bind:GE_PricekWh    }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity: Price of electricity (US cents per kWh) (DB16-19 methodolog{p_end}
+{p 0 48}{bind:GE_Procedures  }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity: Procedures (number) [IC.ELC.PROC.NO]{p_end}
+{p 0 48}{bind:GE_Time        }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Getting electricity: Time (days) [IC.ELC.TIME]{p_end}
+{p 0 48}{bind:EaseofBusiness }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Global: Ease of doing business score (DB17-19 methodology) [IC.BUS.EASE.DFRN.XQ.{p_end}
+{p 0 48}{bind:OtherTaxes     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Other taxes (% of profits) [OTHR.TAX.PAID.ZS]{p_end}
+{p 0 48}{bind:PT_Score       }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Paying taxes (DB17-19 methodology) - Score [PAY.TAX.DB1719.DRFN]{p_end}
+{p 0 48}{bind:PT_PaymnetNum  }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Paying taxes: Payments (number per year) [PAY.TAX.PYMT.FREQ.NO]{p_end}
+{p 0 48}{bind:PT_ProfitTax   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Paying taxes: Profit tax (% of profits) [PAY.TAX.PRFT.CP.ZS]{p_end}
+{p 0 48}{bind:PT_TaxRate     }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Paying taxes: Total tax rate (% of profit) [PAY.TAX.TOT.TAX.RT.ZS]{p_end}
+{p 0 48}{bind:PMI_Score      }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Protecting minority investors (DB15-19 methodology) - Score [PROT.MINOR.INV.DFRN{p_end}
+{p 0 48}{bind:PMI_Sharehold~s}{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Protecting minority investors: Extent of shareholder rights index (0-10) (DB15-1{p_end}
+{p 0 48}{bind:PMI_Disclosur~x}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Protecting minority investors: Extent of disclosure index (0-10) [PROT.MINOR.INV{p_end}
+{p 0 48}{bind:PMI_Liability~x}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Protecting minority investors: Extent of director liability index (0-10) [PROT.M{p_end}
+{p 0 48}{bind:PMI_Transpare~x}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Protecting minority investors: Extent of corporate transparency index (0-10) (DB{p_end}
+{p 0 48}{bind:RegProp_Score  }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Registering property (DB17-19 methodology) - Score [IC.REG.PRRT.DFRN.DB1719]{p_end}
+{p 0 48}{bind:RegProp_Cost   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Registering property: Cost (% of property value) [IC.REG.PRRT.COST.PRT.VAL]{p_end}
+{p 0 48}{bind:RegProp_Equal~y}{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Registering property: Equal access to property rights index (-2-0) (DB17-19 meth{p_end}
+{p 0 48}{bind:RegProp_Dispu~s}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Registering property: Land dispute resolution index (0-8) (DB16-19 methodology) {p_end}
+{p 0 48}{bind:RegProp_Proce~s}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Registering property: Procedures (number) [IC.REG.PRRT.PROC.NO]{p_end}
+{p 0 48}{bind:RegProp_Relia~y}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Registering property: Reliability of infrastructure index (0-8) (DB16-19 methodo{p_end}
+{p 0 48}{bind:RegProp_Time   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Registering property: Time (days) [IC.REG.PRRT.DURS.TM]{p_end}
+{p 0 48}{bind:RegProp_Trans~y}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Registering property: Transparency of information index (0-6) (DB16-19 methodolo{p_end}
+{p 0 48}{bind:RI_Score       }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Resolving insolvency (DB15-19 methodology) - Score [RESLV.ISV.DB1519.DFRN]{p_end}
+{p 0 48}{bind:RI_Cost        }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Resolving insolvency: Cost (% of estate) [RESLV.ISV.COST.ZS]{p_end}
+{p 0 48}{bind:StBus_Score    }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Starting a business - Score [IC.REG.STRT.BUS.DFRN]{p_end}
+{p 0 48}{bind:StBus_MinCapi~l}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Starting a business: Minimum capital (% of income per capita) [IC.REG.MIN.CAP]{p_end}
+{p 0 48}{bind:StBus_Proce~Men}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Starting a business: Procedures required - Men (number) [IC.REG.PROC.MA.NO]{p_end}
+{p 0 48}{bind:StBus_Proce~men}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Starting a business: Procedures required - Women (number) [IC.REG.PROC.FE.NO]{p_end}
+{p 0 48}{bind:StBus_CostMen  }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Starting a business: Cost - Men (% of income per capita) [IC.REG.COST.PC.MA.ZS]{p_end}
+{p 0 48}{bind:StBus_CostWomen}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Starting a business: Cost - Women (% of income per capita) [IC.REG.COST.PC.FE.ZS{p_end}
+{p 0 48}{bind:StBus_TimeMen  }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Starting a business: Time - Men (days) [IC.REG.DURS.MA.DY]{p_end}
+{p 0 48}{bind:StBus_TimeWomen}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Starting a business: Time - Women (days) [IC.REG.DURS.FE.DY]{p_end}
+{p 0 48}{bind:EXPTime_Borde~p}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Time to export: Border compliance (hours) (DB16-19 methodology) [TRD.ACRS.BRDR.E{p_end}
+{p 0 48}{bind:EXPTime_DocComp}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Time to export: Documentary compliance (hours) (DB16-19 methodology) [TRD.ACRS.B{p_end}
+{p 0 48}{bind:IMPTime_Borde~p}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Time to import: Border compliance (hours) (DB16-19 methodology) [TRD.ACRS.BRDR.I{p_end}
+{p 0 48}{bind:IMPTime_DocComp}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Time to import: Documentary compliance (hours) (DB16-19 methodology) [TRD.ACRS.B{p_end}
+{p 0 48}{bind:Trading_Score  }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Trading across borders (DB16-19 methodology) - Score [TRD.ACRS.BRDR.DB1619.DFRN]{p_end}
+{p 0 48}{bind:EXTrading_Bor~t}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Trading across borders: Cost to export: Border compliance (USD) (DB16-19 methodo{p_end}
+{p 0 48}{bind:EXTrading_Doc~t}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Trading across borders: Cost to export: Documentary compliance (USD) (DB16-19 me{p_end}
+{p 0 48}{bind:IMTrading_Bor~t}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Trading across borders: Cost to import: Border compliance (USD) (DB16-19 methodo{p_end}
+{p 0 48}{bind:IMTrading_Doc~t}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Trading across borders: Cost to import: Documentary compliance (USD) (DB16-19 me{p_end}
+{p 0 48}{bind:ElectricityAc~s}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Access to electricity (% of population) [EG.ELC.ACCS.ZS]{p_end}
+{p 0 48}{bind:NewHIV         }{txt}{bind: long    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Adults (ages 15+) newly infected with HIV [SH.HIV.INCD]{p_end}
+{p 0 48}{bind:ExistHIV       }{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Antiretroviral therapy coverage (% of people living with HIV) [SH.HIV.ARTC.ZS]{p_end}
+{p 0 48}{bind:FoodExp_perct~h}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Food exports (% of merchandise exports) [TX.VAL.FOOD.ZS.UN]{p_end}
+{p 0 48}{bind:FoodImp_perct~h}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Food imports (% of merchandise imports) [TM.VAL.FOOD.ZS.UN]{p_end}
+{p 0 48}{bind:FuelExp_perct~h}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Fuel exports (% of merchandise exports) [TX.VAL.FUEL.ZS.UN]{p_end}
+{p 0 48}{bind:FuelImp_perct~h}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Fuel imports (% of merchandise imports) [TM.VAL.FUEL.ZS.UN]{p_end}
+{p 0 48}{bind:HouseholdCons~n}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Households and NPISHs Final consumption expenditure per capita (constant 2010 US{p_end}
+{p 0 48}{bind:InfantMortality}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Mortality rate, infant (per 1,000 live births) [SP.DYN.IMRT.IN]{p_end}
+{p 0 48}{bind:Poverty_190    }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Poverty gap at $1.90 a day (2011 PPP) (%) [SI.POV.GAPS]{p_end}
+{p 0 48}{bind:Poverty_320    }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Poverty gap at $3.20 a day (2011 PPP) (%) [SI.POV.LMIC.GP]{p_end}
+{txt}{hline}
+Sorted by: {res}CountryCode
+{txt}
+{com}. codebook EaseofBusiness //27 missing values
+
+{txt}{hline}
+{res}EaseofBusiness{right:Global: Ease of doing business score (DB17-19 methodology) [IC.BUS.EASE.DFRN.XQ.}
+{txt}{hline}
+
+{col 19}type:  numeric ({res}double{txt})
+
+{col 18}range:  [{res}19.98{txt},{res}86.59{txt}]{col 55}units:  {res}.01
+{col 10}{txt}unique values:  {res}184{col 51}{txt}missing .:  {res}27{txt}/{res}216
+
+{txt}{col 19}mean:{res}{col 26}  61.511
+{txt}{col 15}std. dev:{res}{col 26} 13.4895
+
+{txt}{col 12}percentiles:{col 32}10%{col 42}25%{col 52}50%{col 62}75%{col 72}90%
+{res}{col 27}   43.55{col 37}   52.78{col 47}   61.45{col 57}   72.27{col 67}   78.91
+{txt}
+{com}. li Country EaseofBusiness if EaseofBusiness ==.
+{txt}
+     {c TLC}{hline 27}{c -}{hline 10}{c TRC}
+     {c |} {res}                  Country   Easeof~s {txt}{c |}
+     {c LT}{hline 27}{c -}{hline 10}{c RT}
+  1. {c |} {res}                    Aruba          . {txt}{c |}
+  5. {c |} {res}                  Andorra          . {txt}{c |}
+ 24. {c |} {res}                  Bermuda          . {txt}{c |}
+ 34. {c |} {res}          Channel Islands          . {txt}{c |}
+ 45. {c |} {res}                     Cuba          . {txt}{c |}
+     {c LT}{hline 27}{c -}{hline 10}{c RT}
+ 46. {c |} {res}                  Curacao          . {txt}{c |}
+ 47. {c |} {res}           Cayman Islands          . {txt}{c |}
+ 65. {c |} {res}            Faroe Islands          . {txt}{c |}
+ 71. {c |} {res}                Gibraltar          . {txt}{c |}
+ 78. {c |} {res}                Greenland          . {txt}{c |}
+     {c LT}{hline 27}{c -}{hline 10}{c RT}
+ 80. {c |} {res}                     Guam          . {txt}{c |}
+ 88. {c |} {res}              Isle of Man          . {txt}{c |}
+112. {c |} {res}            Liechtenstein          . {txt}{c |}
+118. {c |} {res}         Macao SAR, China          . {txt}{c |}
+119. {c |} {res}  St Martin (French part)          . {txt}{c |}
+     {c LT}{hline 27}{c -}{hline 10}{c RT}
+121. {c |} {res}                   Monaco          . {txt}{c |}
+133. {c |} {res} Northern Mariana Islands          . {txt}{c |}
+140. {c |} {res}            New Caledonia          . {txt}{c |}
+147. {c |} {res}                    Nauru          . {txt}{c |}
+158. {c |} {res}  Korea, Dem People’s Rep          . {txt}{c |}
+     {c LT}{hline 27}{c -}{hline 10}{c RT}
+162. {c |} {res}         French Polynesia          . {txt}{c |}
+184. {c |} {res}Sint Maarten (Dutch part)          . {txt}{c |}
+187. {c |} {res} Turks and Caicos Islands          . {txt}{c |}
+192. {c |} {res}             Turkmenistan          . {txt}{c |}
+198. {c |} {res}                   Tuvalu          . {txt}{c |}
+     {c LT}{hline 27}{c -}{hline 10}{c RT}
+207. {c |} {res}   British Virgin Islands          . {txt}{c |}
+208. {c |} {res}      Virgin Islands (US)          . {txt}{c |}
+     {c BLC}{hline 27}{c -}{hline 10}{c BRC}
+
+{com}. drop if EaseofBusiness ==.
+{txt}(27 observations deleted)
+
+{com}. * The unit of observation is country, 27 of 216 countries are missing Ease of 
+. * Doing Business(EDB) scores. Dropping out countries without EDB scores to 
+. * prevent those data bias the results.
+. 
+. lab var CAB "Current Account Balance (% of GDP)"
+{txt}
+{com}. lab var EaseofBusiness "Ease of Doing Business Score (0-100)"
+{txt}
+{com}. 
+. *-------------------------Model Building-------------------------*
+. pwcorr EaseofBusiness CAB, star(.05) // correlation: .3653*
+
+             {txt}{c |} Easeof~s      CAB
+{hline 13}{c +}{hline 18}
+EaseofBusi~s {c |} {res}  1.0000 
+         {txt}CAB {c |} {res}  0.3653*  1.0000 
+{txt}
+{com}. 
+. /* Motivating graph */
+. tw lfit EaseofBusiness CAB, lc(cranberry) || ///
+>         scatter EaseofBusiness CAB, graphregion(color(white)) mc(black) ///
+>         msize(small) legend(off) ytitle("Ease of Doing Business Score" "(0-100)") ///
+>         title("Ease of Doing Business Score" "Against Current Account Balance") ///
+>         note("Note: There is a pattern that countries with higher proportion of current account balance to GDP" "have higher Ease of Doing Business Scores.")
+{res}{txt}
+{com}. gr export "iap_huang-1.png", replace
+{txt}(file iap_huang-1.png written in PNG format)
+
+{com}. 
+. /* Regrssion Analysis */
+. eststo clear
+{txt}
+{com}. eststo iap1: reg EaseofBusiness CAB
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       154
+{txt}{hline 13}{c +}{hline 34}   F(1, 152)       = {res}    23.40
+{txt}       Model {c |} {res} 2775.11687         1  2775.11687   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 18025.3622       152  118.587909   {txt}R-squared       ={res}    0.1334
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.1277
+{txt}       Total {c |} {res} 20800.4791       153  135.950844   {txt}Root MSE        =   {res}  10.89
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}EaseofBusi~s{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}CAB {c |}{col 14}{res}{space 2} .4902997{col 26}{space 2} .1013541{col 37}{space 1}    4.84{col 46}{space 3}0.000{col 54}{space 4} .2900551{col 67}{space 3} .6905443
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 65.72787{col 26}{space 2} .9075484{col 37}{space 1}   72.42{col 46}{space 3}0.000{col 54}{space 4} 63.93483{col 67}{space 3} 67.52091
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. //current account balance has statistically positive impact on EDB score
+. 
+. /* Control other factors */
+. d GDPpercap_2010const EXPTime_BorderComp EXPTime_DocComp ElectricityAccess
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:GDPpercap_201~t}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}GDP per capita (constant 2010 US$) [NYGDPPCAPKD]{p_end}
+{p 0 48}{bind:EXPTime_Borde~p}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Time to export: Border compliance (hours) (DB16-19 methodology) [TRD.ACRS.BRDR.E{p_end}
+{p 0 48}{bind:EXPTime_DocComp}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Time to export: Documentary compliance (hours) (DB16-19 methodology) [TRD.ACRS.B{p_end}
+{p 0 48}{bind:ElectricityAc~s}{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Access to electricity (% of population) [EG.ELC.ACCS.ZS]{p_end}
+{txt}
+{com}. 
+. /* Variables Reproduction & Transformation */
+. * Adding up border compliance time and documentary time to estimate the 
+. * total export time
+. gen ExpTime = EXPTime_BorderComp+EXPTime_DocComp
+{txt}(2 missing values generated)
+
+{com}. label var ExpTime "Time to export: Documentary compliance and Border compliance (hours)"
+{txt}
+{com}. 
+. * Log GDP per capita, Days to deal with construction permits, and Time to 
+. * export to eliminate the effect of the skewness of data
+. gen lGDPpercap_2010const = ln(GDPpercap_2010const)
+{txt}(6 missing values generated)
+
+{com}. label var lGDPpercap_2010const "Logged GDP per capita (constant 2010 US$)"
+{txt}
+{com}. gen lExpTime = ln(ExpTime)
+{txt}(2 missing values generated)
+
+{com}. label var lExpTime "Logged Time to export: Documentary compliance and Border compliance (hours)"
+{txt}
+{com}. 
+. * Correlation of independent variables
+. pwcorr CAB lGDPpercap_2010const lExpTime ElectricityAccess, star(.95)
+
+             {txt}{c |}      CAB lGDPpe~t lExpTime Electr~s
+{hline 13}{c +}{hline 36}
+         CAB {c |} {res}  1.0000 
+{txt}lGDPpercap~t {c |} {res}  0.3913*  1.0000 
+    {txt}lExpTime {c |} {res} -0.2929* -0.6104*  1.0000 
+{txt}Electricit~s {c |} {res}  0.1770*  0.7305* -0.4140*  1.0000 
+{txt}
+{com}. reg EaseofBusiness CAB lGDPpercap_2010const lExpTime ElectricityAccess
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       153
+{txt}{hline 13}{c +}{hline 34}   F(4, 148)       = {res}    59.70
+{txt}       Model {c |} {res}  12760.344         4  3190.08599   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 7907.99157       148  53.4323755   {txt}R-squared       ={res}    0.6174
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6070
+{txt}       Total {c |} {res} 20668.3355       152  135.975892   {txt}Root MSE        =   {res} 7.3097
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2} .1242279{col 34}{space 2} .0756586{col 45}{space 1}    1.64{col 54}{space 3}0.103{col 62}{space 4}-.0252828{col 75}{space 3} .2737387
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2} 3.000616{col 34}{space 2} .7111747{col 45}{space 1}    4.22{col 54}{space 3}0.000{col 62}{space 4} 1.595248{col 75}{space 3} 4.405984
+{txt}{space 12}lExpTime {c |}{col 22}{res}{space 2} -2.28364{col 34}{space 2} .4432754{col 45}{space 1}   -5.15{col 54}{space 3}0.000{col 62}{space 4}-3.159607{col 75}{space 3}-1.407674
+{txt}{space 3}ElectricityAccess {c |}{col 22}{res}{space 2} .0816119{col 34}{space 2} .0333681{col 45}{space 1}    2.45{col 54}{space 3}0.016{col 62}{space 4} .0156725{col 75}{space 3} .1475514
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 39.97568{col 34}{space 2}  6.13404{col 45}{space 1}    6.52{col 54}{space 3}0.000{col 62}{space 4} 27.85406{col 75}{space 3} 52.09729
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. // GDP per capita, export time, and electricity access are correlated with current account balance ratio, and have impact on EDB score, indicating omitted variable bias in the first model
+. 
+. eststo iap2: reg EaseofBusiness CAB lGDPpercap_2010const 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       153
+{txt}{hline 13}{c +}{hline 34}   F(2, 150)       = {res}    85.85
+{txt}       Model {c |} {res} 11031.4816         2  5515.74081   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  9636.8539       150  64.2456927   {txt}R-squared       ={res}    0.5337
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.5275
+{txt}       Total {c |} {res} 20668.3355       152  135.975892   {txt}Root MSE        =   {res} 8.0153
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2} .1195876{col 34}{space 2}   .08173{col 45}{space 1}    1.46{col 54}{space 3}0.146{col 62}{space 4}-.0419032{col 75}{space 3} .2810784
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2}  5.71959{col 34}{space 2} .5012438{col 45}{space 1}   11.41{col 54}{space 3}0.000{col 62}{space 4}  4.72918{col 75}{space 3}     6.71
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 14.72559{col 34}{space 2} 4.521004{col 45}{space 1}    3.26{col 54}{space 3}0.001{col 62}{space 4} 5.792515{col 75}{space 3} 23.65867
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. eststo iap3: reg EaseofBusiness CAB lGDPpercap_2010const lExpTime
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       153
+{txt}{hline 13}{c +}{hline 34}   F(3, 149)       = {res}    75.10
+{txt}       Model {c |} {res}  12440.713         3  4146.90432   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 8227.62257       149  55.2189434   {txt}R-squared       ={res}    0.6019
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.5939
+{txt}       Total {c |} {res} 20668.3355       152  135.975892   {txt}Root MSE        =   {res} 7.4309
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2} .0947442{col 34}{space 2} .0759305{col 45}{space 1}    1.25{col 54}{space 3}0.214{col 62}{space 4}-.0552955{col 75}{space 3} .2447839
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2} 4.080509{col 34}{space 2} .5667583{col 45}{space 1}    7.20{col 54}{space 3}0.000{col 62}{space 4} 2.960587{col 75}{space 3} 5.200431
+{txt}{space 12}lExpTime {c |}{col 22}{res}{space 2}-2.276423{col 34}{space 2} .4506152{col 45}{space 1}   -5.05{col 54}{space 3}0.000{col 62}{space 4}-3.166844{col 75}{space 3}-1.386001
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 37.42832{col 34}{space 2} 6.145201{col 45}{space 1}    6.09{col 54}{space 3}0.000{col 62}{space 4} 25.28532{col 75}{space 3} 49.57132
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. eststo iap4: reg EaseofBusiness CAB lGDPpercap_2010const lExpTime ElectricityAccess
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       153
+{txt}{hline 13}{c +}{hline 34}   F(4, 148)       = {res}    59.70
+{txt}       Model {c |} {res}  12760.344         4  3190.08599   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 7907.99157       148  53.4323755   {txt}R-squared       ={res}    0.6174
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6070
+{txt}       Total {c |} {res} 20668.3355       152  135.975892   {txt}Root MSE        =   {res} 7.3097
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2} .1242279{col 34}{space 2} .0756586{col 45}{space 1}    1.64{col 54}{space 3}0.103{col 62}{space 4}-.0252828{col 75}{space 3} .2737387
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2} 3.000616{col 34}{space 2} .7111747{col 45}{space 1}    4.22{col 54}{space 3}0.000{col 62}{space 4} 1.595248{col 75}{space 3} 4.405984
+{txt}{space 12}lExpTime {c |}{col 22}{res}{space 2} -2.28364{col 34}{space 2} .4432754{col 45}{space 1}   -5.15{col 54}{space 3}0.000{col 62}{space 4}-3.159607{col 75}{space 3}-1.407674
+{txt}{space 3}ElectricityAccess {c |}{col 22}{res}{space 2} .0816119{col 34}{space 2} .0333681{col 45}{space 1}    2.45{col 54}{space 3}0.016{col 62}{space 4} .0156725{col 75}{space 3} .1475514
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 39.97568{col 34}{space 2}  6.13404{col 45}{space 1}    6.52{col 54}{space 3}0.000{col 62}{space 4} 27.85406{col 75}{space 3} 52.09729
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. // the impact of current account balance decreases when we add more explanatory variables to the model, and losses statistical significance in the forth regression; logged GDP per capita reports the highest coefficient
+. 
+. *--------------------Regression Diagnostic------------------*
+. /* Scatter plot */
+. * Model Accuracy
+. reg EaseofBusiness CAB lGDPpercap_2010const lExpTime ElectricityAccess
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       153
+{txt}{hline 13}{c +}{hline 34}   F(4, 148)       = {res}    59.70
+{txt}       Model {c |} {res}  12760.344         4  3190.08599   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 7907.99157       148  53.4323755   {txt}R-squared       ={res}    0.6174
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6070
+{txt}       Total {c |} {res} 20668.3355       152  135.975892   {txt}Root MSE        =   {res} 7.3097
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2} .1242279{col 34}{space 2} .0756586{col 45}{space 1}    1.64{col 54}{space 3}0.103{col 62}{space 4}-.0252828{col 75}{space 3} .2737387
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2} 3.000616{col 34}{space 2} .7111747{col 45}{space 1}    4.22{col 54}{space 3}0.000{col 62}{space 4} 1.595248{col 75}{space 3} 4.405984
+{txt}{space 12}lExpTime {c |}{col 22}{res}{space 2} -2.28364{col 34}{space 2} .4432754{col 45}{space 1}   -5.15{col 54}{space 3}0.000{col 62}{space 4}-3.159607{col 75}{space 3}-1.407674
+{txt}{space 3}ElectricityAccess {c |}{col 22}{res}{space 2} .0816119{col 34}{space 2} .0333681{col 45}{space 1}    2.45{col 54}{space 3}0.016{col 62}{space 4} .0156725{col 75}{space 3} .1475514
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 39.97568{col 34}{space 2}  6.13404{col 45}{space 1}    6.52{col 54}{space 3}0.000{col 62}{space 4} 27.85406{col 75}{space 3} 52.09729
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. predict EDB_hat
+{txt}(option {bf:xb} assumed; fitted values)
+(36 missing values generated)
+
+{com}. scatter EaseofBusiness EDB_hat, msize(small) mc(black) || ///
+>         scatteri 30 30 85 85, recast(line) lpattern(vshortdash) lc(cranberry) ///
+>         legend(order (1 "Ease of Doing Business" "Score (0-100)" 2 "45-degree line") ring(0) row(2) bplace(se)) ///
+>         ytitle("Actual value") ///
+>         xtitle(Predicted value) xlab(20(20)100) ///
+>         graphregion(color(white)) ///
+>         title("Predicted vs Actual") ///
+>         note("Note: There is a strong correlation between the model's predictions and its actual values.")
+{res}{txt}
+{com}. gr export "iap_huang-2.png", replace
+{txt}(file iap_huang-2.png written in PNG format)
+
+{com}. 
+. 
+. /* Collinearity */
+. reg EaseofBusiness CAB lGDPpercap_2010const lExpTime ElectricityAccess
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       153
+{txt}{hline 13}{c +}{hline 34}   F(4, 148)       = {res}    59.70
+{txt}       Model {c |} {res}  12760.344         4  3190.08599   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 7907.99157       148  53.4323755   {txt}R-squared       ={res}    0.6174
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6070
+{txt}       Total {c |} {res} 20668.3355       152  135.975892   {txt}Root MSE        =   {res} 7.3097
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2} .1242279{col 34}{space 2} .0756586{col 45}{space 1}    1.64{col 54}{space 3}0.103{col 62}{space 4}-.0252828{col 75}{space 3} .2737387
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2} 3.000616{col 34}{space 2} .7111747{col 45}{space 1}    4.22{col 54}{space 3}0.000{col 62}{space 4} 1.595248{col 75}{space 3} 4.405984
+{txt}{space 12}lExpTime {c |}{col 22}{res}{space 2} -2.28364{col 34}{space 2} .4432754{col 45}{space 1}   -5.15{col 54}{space 3}0.000{col 62}{space 4}-3.159607{col 75}{space 3}-1.407674
+{txt}{space 3}ElectricityAccess {c |}{col 22}{res}{space 2} .0816119{col 34}{space 2} .0333681{col 45}{space 1}    2.45{col 54}{space 3}0.016{col 62}{space 4} .0156725{col 75}{space 3} .1475514
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 39.97568{col 34}{space 2}  6.13404{col 45}{space 1}    6.52{col 54}{space 3}0.000{col 62}{space 4} 27.85406{col 75}{space 3} 52.09729
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. vif //VIFs are all smaller than 3, low collinearity
+
+{txt}    Variable {c |}       VIF       1/VIF  
+{hline 13}{c +}{hline 22}
+lGDPpercap~t {c |} {res}     2.86    0.349883
+{txt}Electricit~s {c |} {res}     1.98    0.505534
+{txt}{space 4}lExpTime {c |} {res}     1.62    0.616310
+{txt}{space 9}CAB {c |} {res}     1.22    0.821910
+{txt}{hline 13}{c +}{hline 22}
+    Mean VIF {c |} {res}     1.92
+{txt}
+{com}. 
+. /* Outlier */
+. reg EaseofBusiness CAB lGDPpercap_2010const lExpTime ElectricityAccess
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       153
+{txt}{hline 13}{c +}{hline 34}   F(4, 148)       = {res}    59.70
+{txt}       Model {c |} {res}  12760.344         4  3190.08599   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 7907.99157       148  53.4323755   {txt}R-squared       ={res}    0.6174
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6070
+{txt}       Total {c |} {res} 20668.3355       152  135.975892   {txt}Root MSE        =   {res} 7.3097
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2} .1242279{col 34}{space 2} .0756586{col 45}{space 1}    1.64{col 54}{space 3}0.103{col 62}{space 4}-.0252828{col 75}{space 3} .2737387
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2} 3.000616{col 34}{space 2} .7111747{col 45}{space 1}    4.22{col 54}{space 3}0.000{col 62}{space 4} 1.595248{col 75}{space 3} 4.405984
+{txt}{space 12}lExpTime {c |}{col 22}{res}{space 2} -2.28364{col 34}{space 2} .4432754{col 45}{space 1}   -5.15{col 54}{space 3}0.000{col 62}{space 4}-3.159607{col 75}{space 3}-1.407674
+{txt}{space 3}ElectricityAccess {c |}{col 22}{res}{space 2} .0816119{col 34}{space 2} .0333681{col 45}{space 1}    2.45{col 54}{space 3}0.016{col 62}{space 4} .0156725{col 75}{space 3} .1475514
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 39.97568{col 34}{space 2}  6.13404{col 45}{space 1}    6.52{col 54}{space 3}0.000{col 62}{space 4} 27.85406{col 75}{space 3} 52.09729
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. predict stud, rstudent
+{txt}(36 missing values generated)
+
+{com}. predict lev, leverage
+{txt}(36 missing values generated)
+
+{com}. predict cooksd, cooksd
+{txt}(36 missing values generated)
+
+{com}. predict dfits, dfit
+{txt}(36 missing values generated)
+
+{com}. gen obs=_n
+{txt}
+{com}. gen absrstud=abs(stud)
+{txt}(36 missing values generated)
+
+{com}. label var absrstud "Absolute Value of Studentized Residuals"
+{txt}
+{com}. gen absdfits=abs(dfits)
+{txt}(36 missing values generated)
+
+{com}. label var absdfits "Absolute Value of DFFIT"
+{txt}
+{com}. gen absrstudsq=abs(stud)
+{txt}(36 missing values generated)
+
+{com}. label var absrstudsq "Studentized Residuals Squared"
+{txt}
+{com}. ereturn li
+
+{txt}scalars:
+                  e(N) =  {res}153
+               {txt}e(df_m) =  {res}4
+               {txt}e(df_r) =  {res}148
+                  {txt}e(F) =  {res}59.7032409813272
+                 {txt}e(r2) =  {res}.6173861431682059
+               {txt}e(rmse) =  {res}7.309745241430171
+                {txt}e(mss) =  {res}12760.3439614381
+                {txt}e(rss) =  {res}7907.991573202433
+               {txt}e(r2_a) =  {res}.607045228118698
+                 {txt}e(ll) =  {res}-518.904722173257
+               {txt}e(ll_0) =  {res}-592.4004910625836
+               {txt}e(rank) =  {res}5
+
+{txt}macros:
+            e(cmdline) : "{res}regress EaseofBusiness CAB lGDPpercap_2010const lExpTime ElectricityAccess{txt}"
+              e(title) : "{res}Linear regression{txt}"
+          e(marginsok) : "{res}XB default{txt}"
+                e(vce) : "{res}ols{txt}"
+             e(depvar) : "{res}EaseofBusiness{txt}"
+                e(cmd) : "{res}regress{txt}"
+         e(properties) : "{res}b V{txt}"
+            e(predict) : "{res}regres_p{txt}"
+              e(model) : "{res}ols{txt}"
+          e(estat_cmd) : "{res}regress_estat{txt}"
+
+matrices:
+                  e(b) : {res} 1 x 5
+                  {txt}e(V) : {res} 5 x 5
+
+{txt}functions:
+             e(sample)   
+
+{com}. scalar k=e(df_m) // k=4 
+{txt}
+{com}. scalar nn=e(N) //nn=153
+{txt}
+{com}. 
+. * Outlier under various thresholds 
+. count if abs(stud)>2 & stud!=. 
+  {res}7
+{txt}
+{com}. count if lev>(2*k+2)/nn & lev!=. 
+  {res}8
+{txt}
+{com}. count if cooksd>4/nn & cooksd!=. 
+  {res}10
+{txt}
+{com}. count if abs(dfits)>2*sqrt(k/nn) & dfits!=.     
+  {res}13
+{txt}
+{com}. count if (absrstud>2 & lev>(2*k+2)/nn & cooksd>4/nn) & (absrstud!=. & lev!=. & cooksd!=.)
+  {res}0
+{txt}
+{com}. count if (absrstud>2 & lev>(2*k+2)/nn & absdfits>2*sqrt(k/nn)) & (absrstud!=. & lev!=. & absdfits!=.)
+  {res}0
+{txt}
+{com}. count if (absrstud>2 & lev>(2*k+2)/nn & cooksd>4/nn & absdfits>2*sqrt(k/nn)) & (absrstud!=. & lev!=. & cooksd!=. & absdfits!=.)  //no extreme outlier
+  {res}0
+{txt}
+{com}. * Generate a variable for outliers of any threshold (1: outlier; 0: not outlier)
+. gen outlier=0
+{txt}
+{com}. replace outlier=1 if (abs(stud)>2 | lev>(2*k+2)/nn | cooksd>4/nn | abs(dfits)>2*sqrt(k/nn)) //56 outliers generated
+{txt}(56 real changes made)
+
+{com}. 
+. /* Scatter plot - Outliers */
+. twoway scatter lev absrstud if outlier==0 & lev !=. & absrstud!=., mcolor(black) msize(small) || ///
+>         scatter lev absrstud if outlier==1 & lev !=. & absrstud!=., mcolor(cranberry) msize(small) mlabel(CountryCode) mlabsize(tiny) ///
+>         xtitle("Standardized Residuals Squared") ///
+>         ytitle("Leverage") ///
+>         graphregion(color(white)) ///
+>         legend(label(1 "Non-Outliers") label(2 "Outliers") bplace(ne) ring(0) col(1)) ///
+>         title(Outliers) note("Note: Outliers are counted on the thresholds of rstudent, leverage, Cook's distance, and DFFIT. Outliers are lebeled with country code.")
+{res}{txt}
+{com}. graph export "iap_huang-3.png", replace
+{txt}(file iap_huang-3.png written in PNG format)
+
+{com}. 
+. /* Regression without outliers */
+. eststo iap5:reg EaseofBusiness CAB lGDPpercap_2010const lExpTime ElectricityAccess if outlier==0
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       133
+{txt}{hline 13}{c +}{hline 34}   F(4, 128)       = {res}    74.51
+{txt}       Model {c |} {res} 10889.4232         4   2722.3558   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 4676.73875       128  36.5370215   {txt}R-squared       ={res}    0.6996
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6902
+{txt}       Total {c |} {res}  15566.162       132  117.925469   {txt}Root MSE        =   {res} 6.0446
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2}  .263331{col 34}{space 2}    .0835{col 45}{space 1}    3.15{col 54}{space 3}0.002{col 62}{space 4} .0981119{col 75}{space 3}   .42855
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2} 2.459103{col 34}{space 2} .6387806{col 45}{space 1}    3.85{col 54}{space 3}0.000{col 62}{space 4} 1.195166{col 75}{space 3} 3.723039
+{txt}{space 12}lExpTime {c |}{col 22}{res}{space 2}-2.284357{col 34}{space 2} .4080016{col 45}{space 1}   -5.60{col 54}{space 3}0.000{col 62}{space 4}-3.091658{col 75}{space 3}-1.477056
+{txt}{space 3}ElectricityAccess {c |}{col 22}{res}{space 2} .1299578{col 34}{space 2}  .035387{col 45}{space 1}    3.67{col 54}{space 3}0.000{col 62}{space 4} .0599386{col 75}{space 3} .1999771
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 40.74303{col 34}{space 2} 5.778032{col 45}{space 1}    7.05{col 54}{space 3}0.000{col 62}{space 4} 29.31021{col 75}{space 3} 52.17586
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. * the model regains significance after removing outliers
+. 
+. /* Heteroskedasticity */
+. rvfplot, yline(0) mlabsize(small) msize(small) mc(black) ///
+>         title("Residual Plot") ///
+>         xtitle("Predicted values for Ease of Doing Business Score") graphregion(color(white)) ///
+>         note("Note: Residuals are distributed symmetrically and have no clear patterns;" "however, they are clustered around +10 and -10 of the y-axis.")
+{res}{txt}
+{com}. gr export "iap_huang-5.png", replace
+{txt}(file iap_huang-5.png written in PNG format)
+
+{com}. 
+. hettest
+
+{txt}Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+{p 9 20}Variables: fitted values of EaseofBusiness
+
+{col 10}chi2({res}1{txt}){col 23}={res}     0.01
+{txt}{col 10}Prob > chi2{col 23}={res}   0.9212
+{txt}
+{com}. imtest, white
+
+{txt}White's test for Ho: homoskedasticity
+         against Ha: unrestricted heteroskedasticity
+
+{col 10}chi2({res}14{txt}){col 23}= {res}    10.05
+{col 10}{txt}Prob > chi2  = {res}   0.7589
+
+{txt}Cameron & Trivedi's decomposition of IM-test
+
+{hline 21}{c TT}{hline 29}
+{ralign 20:Source} {c |}       chi2     df      p
+{hline 21}{c +}{hline 29}
+{ralign 20:Heteroskedasticity} {c |}{res}      10.05     14    0.7589
+{txt}{ralign 20:Skewness} {c |}{res}       1.48      4    0.8303
+{txt}{ralign 20:Kurtosis} {c |}{res}       9.28      1    0.0023
+{txt}{hline 21}{c +}{hline 29}
+{ralign 20:Total} {c |}{res}      20.80     19    0.3478
+{txt}{hline 21}{c BT}{hline 29}
+
+{com}. 
+. * Robust Regression
+. eststo iap6: reg EaseofBusiness CAB lGDPpercap_2010const lExpTime ElectricityAccess, robust
+
+{txt}Linear regression                               Number of obs     = {res}       153
+                                                {txt}F(4, 148)         =  {res}    61.89
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.6174
+                                                {txt}Root MSE          =    {res} 7.3097
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 22}{c |}{col 34}    Robust
+{col 1}      EaseofBusiness{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}CAB {c |}{col 22}{res}{space 2} .1242279{col 34}{space 2} .0783038{col 45}{space 1}    1.59{col 54}{space 3}0.115{col 62}{space 4}-.0305099{col 75}{space 3} .2789658
+{txt}lGDPpercap_2010const {c |}{col 22}{res}{space 2} 3.000616{col 34}{space 2} .7194077{col 45}{space 1}    4.17{col 54}{space 3}0.000{col 62}{space 4} 1.578978{col 75}{space 3} 4.422254
+{txt}{space 12}lExpTime {c |}{col 22}{res}{space 2} -2.28364{col 34}{space 2} .4065549{col 45}{space 1}   -5.62{col 54}{space 3}0.000{col 62}{space 4}-3.087042{col 75}{space 3}-1.480238
+{txt}{space 3}ElectricityAccess {c |}{col 22}{res}{space 2} .0816119{col 34}{space 2} .0358672{col 45}{space 1}    2.28{col 54}{space 3}0.024{col 62}{space 4} .0107339{col 75}{space 3}   .15249
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} 39.97568{col 34}{space 2} 6.247546{col 45}{space 1}    6.40{col 54}{space 3}0.000{col 62}{space 4} 27.62976{col 75}{space 3} 52.32159
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. 
+. * Export regression table
+. esttab iap* using iap_tab.tex, replace se ar2 scalars(rmse) title(Regression Table\label{c -(}tab1{c )-}) note()
+{res}{txt}(output written to {browse  `"iap_tab.tex"'})
+
+{com}. 
+. 
+. *-------------------------Closing commands----------------------------*
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\hhyao\OneDrive - UC San Diego\Career\Sample Project\Matthews Asia Data Project\iap_huang.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}25 Apr 2020, 18:10:23
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
